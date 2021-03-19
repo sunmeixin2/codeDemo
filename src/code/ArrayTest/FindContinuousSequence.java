@@ -1,6 +1,7 @@
 package code.ArrayTest;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -41,6 +42,30 @@ public class FindContinuousSequence {
     public static void main(String[] args) {
         FindContinuousSequence findContinuousSequence = new FindContinuousSequence();
         findContinuousSequence.FindContinuousSequence_solution(9);
+    }
+
+    public int[][] findContinuousSequence(int target) {
+        List<int[]> res = new ArrayList<>();
+        int l = 1,r = 1;
+        int sum = 0;
+        while (l <= target/2) {
+            if (sum < target) {
+                sum += r;
+                r++;
+            } else if (sum > target) {
+                sum -= l;
+                l++;
+            } else {
+                int[] list = new int[r-l];
+                for (int i = l; i < r; i++) {
+                    list[i-l] = i;
+                }
+                res.add(list);
+                sum -= l;
+                l++;
+            }
+        }
+        return res.toArray(new int[res.size()][]);
     }
 }
 

@@ -27,6 +27,24 @@ public class FindNumbersWithSum {
         }
         return result;
     }
+
+    public int[] twoSum(int[] nums, int target) {
+        int[] arr = new int[2];
+        int p = 0;
+        int q = nums.length-1;
+        while (p < q) {
+            if (nums[p] + nums[q] > target) {
+                q--;
+            } else if (nums[p] + nums[q] < target) {
+                p++;
+            } else {
+                break;
+            }
+        }
+        arr[0] = nums[p];
+        arr[1] = nums[q];
+        return arr;
+    }
 }
 
 /**

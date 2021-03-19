@@ -15,7 +15,7 @@ public class JumpFloorDemo {
      * @param target
      * @return
      */
-    public int jumpFloor2(int target) {
+    public static int jumpFloor2(int target) {
         if (target == 1) {
             return 1;
         }
@@ -29,7 +29,7 @@ public class JumpFloorDemo {
             second = first + second;
             first = cur;
         }
-        return first;
+        return second;
     }
 
 
@@ -38,7 +38,7 @@ public class JumpFloorDemo {
      * @param target
      * @return
      */
-    public int jumpFloor(int target) {
+    public static int jumpFloor(int target) {
         if (target == 1) {
             return 1;
         }
@@ -46,6 +46,10 @@ public class JumpFloorDemo {
             return 2;
         }
         return jumpFloor(target-1) + jumpFloor(target-2);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(jumpFloor2(3));
     }
 }
 

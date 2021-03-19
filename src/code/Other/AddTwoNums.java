@@ -7,7 +7,7 @@ package code.Other;
  */
 public class AddTwoNums {
 
-    public int Add(int num1, int num2){
+    public static int add(int num1, int num2){
 
         int result = 0;
         int carry = 0;
@@ -21,6 +21,10 @@ public class AddTwoNums {
 
         return result;
 
+    }
+
+    public static void main(String[] args) {
+        add(5,3);
     }
 }
 

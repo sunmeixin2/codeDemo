@@ -58,6 +58,7 @@ public class FindFirstCommonNode {
     public ListNode FindFirstCommonNode_Solution2(ListNode pHead1, ListNode pHead2) {
         ListNode p1 = pHead1,p2 = pHead2;
         while (p1 != p2) {
+            // 判断条件不能是p1.next 和 p2.next,否则再两个链表无公共节点时无法跳出循环
             p1 = (p1== null ? pHead2:p1.next);
             p2 = (p2 == null ? pHead1:p2.next);
         }
@@ -81,6 +82,6 @@ public class FindFirstCommonNode {
 
         l2.next = l3;
         l3.next = n2;
-        findFirstCommonNode.FindFirstCommonNode_Solution(l1,l2);
+        findFirstCommonNode.FindFirstCommonNode_Solution2(l1,l2);
     }
 }

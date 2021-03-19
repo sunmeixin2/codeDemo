@@ -20,7 +20,9 @@ public class ReBuildBinaryTree {
             return null;
         }
         TreeNode root = new TreeNode(pre[0]);
+        // 中序遍历
         for (int i=0; i<in.length; i++) {
+            // 找出中序序列中root的位置
             if (in[i] == pre[0]) {
                 root.left = reConstructBinaryTree(Arrays.copyOfRange(pre, 1, i + 1), Arrays.copyOfRange(in, 0, i));
                 root.right = reConstructBinaryTree(Arrays.copyOfRange(pre, i + 1, pre.length), Arrays.copyOfRange(in, i + 1, in.length));
@@ -59,6 +61,7 @@ public class ReBuildBinaryTree {
 //        TreeNode root = reBuildBinaryTree.reConstructBinaryTree(pre,in);
         TreeNode root = reBuildBinaryTree.reConstructBinaryTree2(in,post);
         reBuildBinaryTree.print(root);
+
     }
 
     public void print(TreeNode root){

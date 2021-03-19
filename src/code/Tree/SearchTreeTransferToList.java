@@ -20,6 +20,7 @@ public class SearchTreeTransferToList {
             list.get(i).right = list.get(i+1);
             list.get(i+1).left = list.get(i);
         }
+
         return list.get(0);
     }
 
@@ -36,6 +37,29 @@ public class SearchTreeTransferToList {
         list.add(root);
         Convert(root.right,list);
     }
+
+    public TreeNode treeToDoublyList(TreeNode root) {
+        List<TreeNode> list = new ArrayList<>();
+        Convert(root,list);
+
+        for (int i = 0; i < list.size() - 1; i++) {
+            list.get(i).right = list.get(i+1);
+            list.get(i+1).left = list.get(i);
+        }
+
+        return list.get(0);
+    }
+
+//    public void Convert2(TreeNode root,List<TreeNode> list) {
+//        if (root == null) {
+//            return;
+//        }
+//        Convert2(root.left,list);
+//        list.add(root);
+//        Convert2(root.right,list);
+//    }
+
+
 
 }
 

@@ -8,7 +8,6 @@ package code.LinkListTest;
 public class ReverseList {
 
     public static void main(String[] args) {
-        ReverseList obj = new ReverseList();
         ListNode l1 = new ListNode(1);
         ListNode l2 = new ListNode(2);
         ListNode l3 = new ListNode(3);
@@ -16,14 +15,14 @@ public class ReverseList {
         l2.next = l3;
 
         // 反转链表
-        ListNode listNode = obj.reverseListNode(l1);
+        ListNode listNode = reverseListNode(l1);
         while (listNode != null) {
             System.out.println(listNode.val);
             listNode = listNode.next;
         }
     }
 
-    public ListNode reverseListNode(ListNode head){
+    public static ListNode reverseListNode(ListNode head){
         if (head == null) {
             return null;
         }
@@ -35,6 +34,25 @@ public class ReverseList {
             head.next = pre;
             pre = head;
             head = p;
+        }
+        return pre;
+    }
+
+    public ListNode reverseList(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        if (head.next == null) {
+            return head;
+        }
+        ListNode pre,curr,q;
+        curr = head;
+        pre = null;
+        while (curr != null) {
+            q = curr.next;
+            curr.next = pre;
+            pre = curr;
+            curr = q;
         }
         return pre;
     }

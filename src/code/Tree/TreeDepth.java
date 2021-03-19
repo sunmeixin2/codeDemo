@@ -11,7 +11,7 @@ import java.util.Queue;
 public class TreeDepth {
 
     /**
-     * 非递归
+     * 非递归 ： 队列 + 记录每层的节点数
      * @param root
      * @return
      */
