@@ -24,10 +24,11 @@ public class JumpFloorDemo {
         }
         int first = 1;
         int second = 2;
+        int sum;
         for (int i = 3; i<= target; i++) {
-            int cur = second;
-            second = first + second;
-            first = cur;
+            sum = (first + second) % 1000000007 ;
+            first = second;
+            second = sum;
         }
         return second;
     }

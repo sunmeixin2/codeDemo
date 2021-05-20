@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * @author sunmeixin
- * @description 字符串的排列
+ * @description
  * @date 2021-02-10
  */
 public class CheckInclusion {

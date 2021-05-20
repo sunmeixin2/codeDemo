@@ -36,7 +36,7 @@ public class Ztransformation {
 
     public static void main(String[] args) {
         Ztransformation obj = new Ztransformation();
-        String str = "LEETCODE";
+        String str = "PAYPALISHIRING";
         int numRows = 3;
         String result = obj.convert(str, numRows);
         System.out.println(result);

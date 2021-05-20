@@ -2,8 +2,7 @@ package code.LinkListTest;
 
 /**
  * @author sunmeixin
- * @description
- * 链表反转
+ * @description 链表反转
  */
 public class ReverseList {
 
